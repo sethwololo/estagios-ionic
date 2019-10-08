@@ -10,7 +10,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: './pages/lista-oportunidades/lista-oportunidades.module#ListaOportunidadesPageModule'
+        loadChildren: './pages/opor-list/opor-list.module#OporListPageModule'
       }
     ]
   }
@@ -20,4 +20,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class OportunidadesRoutingModule { }
+export class OporRoutingModule { }

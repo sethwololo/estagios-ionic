@@ -1,15 +1,13 @@
 import { NgModule } from '@angular/core';
-
 import { Routes, RouterModule } from '@angular/router';
-
-import { ListaOportunidadesPage } from './lista-oportunidades.page';
+import { OporListPage } from './opor-list.page';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ComponentsModule } from '../../components/components.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: ListaOportunidadesPage
+    component: OporListPage
   }
 ];
 
@@ -19,6 +17,6 @@ const routes: Routes = [
     ComponentsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [ListaOportunidadesPage]
+  declarations: [OporListPage]
 })
-export class ListaOportunidadesPageModule {}
+export class OporListPageModule {}

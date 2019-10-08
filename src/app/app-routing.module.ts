@@ -5,7 +5,7 @@ import { AuthGuard } from './core/guards/auth.guard';
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', loadChildren: './auth/auth.module#AuthModule' },
-  { path: 'oportunidades', loadChildren: './oportunidades/oportunidades.module#OportunidadesModule', canLoad: [AuthGuard] },
+  { path: 'opor', loadChildren: './opor/opor.module#OporModule', canLoad: [AuthGuard]},
 ];
 
 @NgModule({

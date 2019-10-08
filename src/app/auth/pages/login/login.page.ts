@@ -78,7 +78,7 @@ export class LoginPage implements OnInit {
         isSignIn: this.configs.isSignIn,
         user: this.authForm.value
       });
-      this.navCtrl.navigateForward(this.route.snapshot.queryParamMap.get('redirect') || '/oportunidades');
+      this.navCtrl.navigateForward(this.route.snapshot.queryParamMap.get('redirect') || '/opor');
     } catch (e) {
       console.log(`Erro de autenticação: ${e}`);
       await this.ovelayService.toast({

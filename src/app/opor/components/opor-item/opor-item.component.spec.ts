@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListaOportunidadesComponent } from './lista-oportunidades.component';
+import { OporItemComponent } from './opor-item.component';
 
-describe('ListaOportunidadesComponent', () => {
-  let component: ListaOportunidadesComponent;
-  let fixture: ComponentFixture<ListaOportunidadesComponent>;
+describe('OporItemComponent', () => {
+  let component: OporItemComponent;
+  let fixture: ComponentFixture<OporItemComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListaOportunidadesComponent ],
+      declarations: [ OporItemComponent ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListaOportunidadesComponent);
+    fixture = TestBed.createComponent(OporItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

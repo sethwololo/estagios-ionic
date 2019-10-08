@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 
-import { ListaOportunidadesComponent } from './lista-oportunidades/lista-oportunidades.component';
+import { OporItemComponent } from './opor-item/opor-item.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
 @NgModule({
   declarations: [
-    ListaOportunidadesComponent
+    OporItemComponent
   ],
   imports: [
     SharedModule
   ],
   exports: [
-    ListaOportunidadesComponent
+    OporItemComponent
   ]
 })
 export class ComponentsModule { }
