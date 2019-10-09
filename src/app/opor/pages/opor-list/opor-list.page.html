@@ -7,7 +7,7 @@
 <ion-content padding>
 
   <ion-list>
-    <ion-item>Aprender</ion-item>
+    <app-opor-item *ngFor="let opor of (opor$ | async)" [opor]="opor"></app-opor-item>
   </ion-list>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
