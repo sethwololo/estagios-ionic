@@ -1,23 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Opor } from '../../models/opor.model';
+import { OporService } from '../../services/opor.service';
 
 @Component({
   selector: 'app-opor-list',
   templateUrl: './opor-list.page.html',
   styleUrls: ['./opor-list.page.scss'],
 })
-export class OporListPage implements OnInit {
+export class OporListPage {
 
   opor$: Observable<Opor[]>;
 
-  constructor() { }
+  constructor(private oporService: OporService) { }
 
-  ngOnInit() {
-    this.opor$ = of ([
-      { id: 'abcdef123', title: 'Teste 1', done: false},
-      { id: 'abcdes143', title: 'Teste 2', done: false},
-    ]);
+  ionViewDidEnter(): void {
+    this.opor$ = this.oporService.getAll();
   }
 
 }

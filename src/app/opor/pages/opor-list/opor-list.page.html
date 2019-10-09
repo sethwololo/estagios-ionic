@@ -5,9 +5,16 @@
 </ion-header>
 
 <ion-content padding>
-
-  <ion-list>
-    <app-opor-item *ngFor="let opor of (opor$ | async)" [opor]="opor"></app-opor-item>
+  <ion-list *ngIf="(opor$ | async) as oportunidades">
+    <ng-container *ngIf="oportunidades.length > 0; else noTasks">
+      <app-opor-item
+        *ngFor="let oportunidade of oportunidades"
+        [opor]="oportunidades"
+      ></app-opor-item>
+    </ng-container>
+    <ng-template #noTasks>
+      <ion-item lines="none">Você ainda não cadastrou nenhuma oportunidade</ion-item>
+    </ng-template>
   </ion-list>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
