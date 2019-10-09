@@ -4,7 +4,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="ion-padding">
+
   <ion-list *ngIf="(opor$ | async) as oportunidades">
     <ng-container *ngIf="oportunidades.length > 0; else noTasks">
       <app-opor-item
@@ -13,7 +14,7 @@
       ></app-opor-item>
     </ng-container>
     <ng-template #noTasks>
-      <ion-item lines="none">Você ainda não cadastrou nenhuma oportunidade</ion-item>
+      <ion-item lines="none">Cadastre uma oportunidade de estágio clicando em <ion-icon name="add"></ion-icon></ion-item>
     </ng-template>
   </ion-list>
 
@@ -22,4 +23,5 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+
 </ion-content>
