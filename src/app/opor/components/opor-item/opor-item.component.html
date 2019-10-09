@@ -8,8 +8,8 @@
         {{ opor.descricao }}
       </ion-card-content>
     </ion-card>
-    <ion-toggle slot="end" color="primary" [checked]="opor.done" (click)="$event.stopPropagation(); done.emit(opor)">
-    </ion-toggle>
+    <!--<ion-toggle slot="end" color="primary" [checked]="opor.done" (click)="$event.stopPropagation(); done.emit(opor)">
+    </ion-toggle>-->
   </ion-item>
   <ion-item-options side="start">
     <ion-item-option color="danger" (click)="delete.emit(opor); sliding.close()">
