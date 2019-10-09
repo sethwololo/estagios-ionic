@@ -3,5 +3,6 @@ export interface Opor {
     idCriador?: string;
     title: string;
     descricao?: string;
+    area?: string;
     done?: boolean;
 }
