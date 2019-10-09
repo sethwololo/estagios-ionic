@@ -1,5 +1,6 @@
 export interface Opor {
     id: string;
     title: string;
-    done: boolean;
+    descricao?: string;
+    done?: boolean;
 }

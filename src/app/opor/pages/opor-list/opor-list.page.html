@@ -10,7 +10,7 @@
     <ng-container *ngIf="oportunidades.length > 0; else noTasks">
       <app-opor-item
         *ngFor="let oportunidade of oportunidades"
-        [opor]="oportunidades"
+        [opor]="oportunidade"
       ></app-opor-item>
     </ng-container>
     <ng-template #noTasks>
