@@ -9,17 +9,19 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-item>
-    <ion-icon name="paper" slot="start" color="primary"></ion-icon>
-    <ion-input type="text" placeholder="Título da vaga" autofocus="true" inputmode="text">
-    </ion-input>
-  </ion-item>
-  <ion-item>
+  <form [formGroup]="oporForm" (submit)="onSubmit()">
+    <ion-item>
+      <ion-icon name="paper" slot="start" color="primary"></ion-icon>
+      <ion-input type="text" placeholder="Título da vaga" autofocus="true" inputmode="text" formControlName="title">
+      </ion-input>
+    </ion-item>
+    <ion-item>
       <ion-icon name="create" slot="start" color="primary"></ion-icon>
-      <ion-textarea type="textarea" placeholder="Descrição" inputmode="text" rows="5">
+      <ion-textarea type="textarea" placeholder="Descrição" inputmode="text" rows="5" formControlName="descricao">
       </ion-textarea>
     </ion-item>
-  <ion-button expand="block" type="submit">
-    Salvar
-  </ion-button>
+    <ion-button expand="block" type="submit" [disabled]="oporForm.invalid">
+      Adicionar
+    </ion-button>
+  </form>
 </ion-content>

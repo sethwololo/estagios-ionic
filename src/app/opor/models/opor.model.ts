@@ -4,5 +4,4 @@ export interface Opor {
     title: string;
     descricao?: string;
     area?: string;
-    done?: boolean;
 }

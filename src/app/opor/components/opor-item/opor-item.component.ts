@@ -8,7 +8,7 @@ import { Opor } from '../../models/opor.model';
 })
 export class OporItemComponent {
   @Input() opor: Opor;
-  @Output() done = new EventEmitter<Opor>();
+  // @Output() done = new EventEmitter<Opor>();
   @Output() update = new EventEmitter<Opor>();
   @Output() delete = new EventEmitter<Opor>();
 }

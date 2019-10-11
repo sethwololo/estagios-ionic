@@ -82,7 +82,7 @@ export class LoginPage implements OnInit {
     } catch (e) {
       console.log(`Erro de autenticação: ${e}`);
       await this.ovelayService.toast({
-        message: e.message
+        message: "Erro de autenticação!"
       });
     } finally {
       loading.dismiss();
