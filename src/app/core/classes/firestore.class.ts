@@ -30,6 +30,10 @@ export abstract class Firestore<T extends { id: string }> {
     return this.collection.doc<T>(id).valueChanges();
   }
 
+  getArea(area: string): Observable<T> {
+    return this.collection.doc<T>(area).valueChanges();
+  }
+
   create(item: T): Promise<T> {
     item.id = this.db.createId();
     return this.setItem(item, 'set');

@@ -1,28 +1,51 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>Oportunidades</ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="primary">
+        <ion-title>Oportunidades</ion-title>
+        <app-logout-button slot="end"></app-logout-button>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
+        <!-- Usar para o de usuário <ion-item>
+                <ion-icon
+                    name="search"
+                    slot="start"
+                    color="primary"
+                ></ion-icon>
+                <ion-select placeholder="Selecione">
+                    <ion-select-option value="area1">TI</ion-select-option>
+                    <ion-select-option value="area2">Administração</ion-select-option>
+                    <ion-select-option value="area3">Pedagogia</ion-select-option>
+                </ion-select>
+            </ion-item> -->
 
-  <ion-list *ngIf="(opor$ | async) as oportunidades">
-    <ng-container *ngIf="oportunidades.length > 0; else noTasks">
-      <app-opor-item
-        *ngFor="let oportunidade of oportunidades"
-        [opor]="oportunidade"
-        
-      ></app-opor-item>
-    </ng-container>
-    <ng-template #noTasks>
-      <ion-item lines="none">Cadastre uma oportunidade de estágio clicando em +</ion-item>
-    </ng-template>
-  </ion-list>
-    
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button routerLink="/opor/create" routerDirection="forward">
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+    <ion-list *ngIf="(opor$ | async) as oportunidades">
+        <ng-container *ngIf="oportunidades.length > 0; else noTasks">
+            <app-opor-item
+                *ngFor="let oportunidade of oportunidades"
+                [opor]="oportunidade"
+                (update)="onUpdate($event)"
+                (delete)="onDelete($event)"
+            ></app-opor-item>
+        </ng-container>
+        <ng-template #noTasks>
+            <ion-item lines="none">
+                Cadastre uma oportunidade de estágio clicando em +
+            </ion-item>
+        </ng-template>
+    </ion-list>
+
+    <ion-fab
+        vertical="bottom"
+        horizontal="end"
+        slot="fixed"
+    >
+        <ion-fab-button
+            routerLink="/opor/create"
+            routerDirection="forward"
+        >
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
 
 </ion-content>

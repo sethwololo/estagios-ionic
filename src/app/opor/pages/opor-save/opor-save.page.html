@@ -1,27 +1,67 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/opor"></ion-back-button>
-    </ion-buttons>
-    <ion-title>Adicionar oportunidade</ion-title>
-
-  </ion-toolbar>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/opor"></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{ pageTitle }}</ion-title>
+        <app-logout-button slot="end"></app-logout-button>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <form [formGroup]="oporForm" (submit)="onSubmit()">
-    <ion-item>
-      <ion-icon name="paper" slot="start" color="primary"></ion-icon>
-      <ion-input type="text" placeholder="Título da vaga" autofocus="true" inputmode="text" formControlName="title">
-      </ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-icon name="create" slot="start" color="primary"></ion-icon>
-      <ion-textarea type="textarea" placeholder="Descrição" inputmode="text" rows="5" formControlName="descricao">
-      </ion-textarea>
-    </ion-item>
-    <ion-button expand="block" type="submit" [disabled]="oporForm.invalid">
-      Adicionar
-    </ion-button>
-  </form>
+    <form
+        [formGroup]="oporForm"
+        (submit)="onSubmit()"
+    >
+        <ion-item>
+            <ion-icon
+                name="clipboard"
+                slot="start"
+                color="primary"
+            ></ion-icon>
+            <ion-input
+                type="text"
+                placeholder="Título da vaga"
+                autofocus="true"
+                inputmode="text"
+                formControlName="title"
+            >
+            </ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-icon
+                name="list"
+                slot="start"
+                color="primary"
+            ></ion-icon>
+            <ion-textarea
+                type="textarea"
+                placeholder="Descrição"
+                inputmode="text"
+                rows="5"
+                formControlName="descricao"
+            >
+            </ion-textarea>
+        </ion-item>
+        <ion-item>
+            <ion-icon
+                name="school"
+                slot="start"
+                color="primary"
+            ></ion-icon>
+            <ion-label>Área</ion-label>
+            <ion-select placeholder="Selecione" formControlName="area">
+                <ion-select-option value="area1">TI</ion-select-option>
+                <ion-select-option value="area2">Administração</ion-select-option>
+                <ion-select-option value="area3">Pedagogia</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-button
+            expand="block"
+            type="submit"
+            [disabled]="oporForm.invalid"
+        >
+            Adicionar
+        </ion-button>
+    </form>
 </ion-content>

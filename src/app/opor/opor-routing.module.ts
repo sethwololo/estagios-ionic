@@ -12,6 +12,10 @@ const routes: Routes = [
         loadChildren: './pages/opor-save/opor-save.module#OporSavePageModule'
       },
       {
+        path: 'edit/:id',
+        loadChildren: './pages/opor-save/opor-save.module#OporSavePageModule'
+      },
+      {
         path: '',
         loadChildren: './pages/opor-list/opor-list.module#OporListPageModule'
       },
