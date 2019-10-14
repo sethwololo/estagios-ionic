@@ -3,9 +3,11 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'home-list', pathMatch: 'full' },
   { path: 'login', loadChildren: './auth/auth.module#AuthModule' },
   { path: 'opor', loadChildren: './opor/opor.module#OporModule', canLoad: [AuthGuard]},
+  { path: 'home-list', loadChildren: './home/pages/home-list/home-list.module#HomeListPageModule' },
+
 ];
 
 @NgModule({
