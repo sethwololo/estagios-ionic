@@ -27,5 +27,4 @@ export class HomeListPage {
     this.home$ = this.homeService.getAll();
     this.home$.pipe(take(1)).subscribe(home => loading.dismiss());
   }
-
 }
